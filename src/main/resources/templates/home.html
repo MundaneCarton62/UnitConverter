@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Converter</title>
+
+</head>
+<body>
+
+    <h2>Unit Converter</h2>
+
+    <form method="post" action="/convert">
+        <input type="number" step="any" name="value"/>
+        <button type="submit">Convert</button>
+    </form>
+
+    <p>Result: <span th:text="${result}"></span></p>
+</body>
+</html>
