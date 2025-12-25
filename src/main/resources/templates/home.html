@@ -10,7 +10,99 @@
     <h2>Unit Converter</h2>
 
     <form method="post" action="/convert">
-        <input type="number" step="any" name="value"/>
+
+        <select name="type">
+            <option value="TEMPERATURE" th:selected ="${type ==T(com.example.UnitConverter.ConversionType).TEMPERATURE}">
+                Temperature</option>
+            <option value="LENGTH"  th:selected ="${type ==T(com.example.UnitConverter.ConversionType).LENGTH}">
+                Length</option>
+            <option value="WEIGHT" th:selected ="${type ==T(com.example.UnitConverter.ConversionType).WEIGHT}">
+                Weight</option>
+        </select>
+
+
+        <select name="from">
+            <option value="CELSIUS" th:selected="${from == 'CELSIUS'}">
+                Celsius
+            </option>
+            <option value="FAHRENHEIT" th:selected="${from == 'FAHRENHEIT'}">
+                Fahrenheit
+            </option>
+            <option value="KELVIN" th:selected="${from == 'KELVIN'}">
+                Kelvin
+            </option>
+
+            <option value="MILLIMETER" th:selected="${from == 'MILLIMETER'}">
+                Millimeter
+            </option>
+            <option value="CENTIMETER" th:selected="${from == 'CENTIMETER'}">
+                Centimeter
+            </option>
+            <option value="METER" th:selected="${from == 'METER'}">
+                Meter
+            </option>
+            <option value="KILOMETER" th:selected="${from == 'KILOMETER'}">
+                Kilometer
+            </option>
+            <option value="MILLIGRAM" th:selected="${from == 'MILLIGRAM'}">
+                Milligram
+            </option>
+            <option value="GRAM" th:selected="${from == 'GRAM'}">
+                Gram
+            </option>
+            <option value="KILOGRAM" th:selected="${from == 'KILOGRAM'}">
+                Kilogram
+            </option>
+            <option value="OUNCE" th:selected="${from == 'OUNCE'}">
+                Ounce
+            </option>
+            <option value="POUND" th:selected="${from == 'POUND'}">
+                Pound
+            </option>
+        </select>
+
+        <select name="to">
+            <option value="CELSIUS" th:selected="${to == 'CELSIUS'}">
+                Celsius
+            </option>
+            <option value="FAHRENHEIT" th:selected="${to == 'FAHRENHEIT'}">
+                Fahrenheit
+            </option>
+            <option value="KELVIN" th:selected="${to == 'KELVIN'}">
+                Kelvin
+            </option>
+
+            <option value="MILLIMETER" th:selected="${to == 'MILLIMETER'}">
+                Millimeter
+            </option>
+            <option value="CENTIMETER" th:selected="${to == 'CENTIMETER'}">
+                Centimeter
+            </option>
+            <option value="METER" th:selected="${to == 'METER'}">
+                Meter
+            </option>
+            <option value="KILOMETER" th:selected="${to == 'KILOMETER'}">
+                Kilometer
+            </option>
+            <option value="MILLIGRAM" th:selected="${to == 'MILLIGRAM'}">
+                Milligram
+            </option>
+            <option value="GRAM" th:selected="${to == 'GRAM'}">
+                Gram
+            </option>
+            <option value="KILOGRAM" th:selected="${to == 'KILOGRAM'}">
+                Kilogram
+            </option>
+            <option value="OUNCE" th:selected="${to == 'OUNCE'}">
+                Ounce
+            </option>
+            <option value="POUND" th:selected="${to == 'POUND'}">
+                Pound
+            </option>
+
+        </select>
+
+        <input type="number" step="any" name="value" th:value="${value}" />
         <button type="submit">Convert</button>
     </form>
 
