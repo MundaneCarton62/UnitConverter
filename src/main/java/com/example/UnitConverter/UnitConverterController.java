@@ -1,7 +1,9 @@
 package com.example.UnitConverter;
 
+import jakarta.validation.constraints.DecimalMin;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +12,8 @@ import static java.lang.Math.round;
 
 
 @Controller
+@Validated
+@SuppressWarnings("unused")
 public class UnitConverterController {
     private final UnitConverterService service;
 
@@ -30,7 +34,7 @@ public class UnitConverterController {
     }
 
     @PostMapping("/convert")
-    public String convert(@RequestParam(defaultValue = "0")  double value,
+    public String convert(@RequestParam @DecimalMin("0.0") double value,
                           @RequestParam ConversionType type,
                           @RequestParam String from,
                           @RequestParam String to,
